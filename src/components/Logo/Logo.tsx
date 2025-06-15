@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
+import Image from 'next/image'
 
 interface Props {
   className?: string
@@ -7,23 +8,36 @@ interface Props {
   priority?: 'auto' | 'high' | 'low'
 }
 
+import MangoohLogo from '@/images/mangooh-logo-white.svg'
+
 export const Logo = (props: Props) => {
-  const { loading: loadingFromProps, priority: priorityFromProps, className } = props
+  const { loading: loadingFromProps, priority: priorityFromProps } = props
 
   const loading = loadingFromProps || 'lazy'
   const priority = priorityFromProps || 'low'
 
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      width={193}
-      height={34}
+    // <img
+    //   alt="Mangooh Logo"
+    //   width={193}
+    //   height={34}
+    //   loading={loading}
+    //   fetchPriority={priority}
+    //   decoding="async"
+    //   className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
+    //   src={MangoohLogo}
+    // />
+    <Image
+      alt="Mangooh Logo"
+      src={MangoohLogo}
+      // width={193}
+      // height={34}
       loading={loading}
       fetchPriority={priority}
       decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
+      // className={clsx('max-w-[9.375rem] w-full h-[34px]')}
+      priority={priority === 'high' ? true : false}
+      unoptimized={priority === 'low' ? true : false}
     />
   )
 }
