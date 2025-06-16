@@ -45,7 +45,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data }) => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-destructive text-white h-screen max-h-[900px] rounded-bl-[150px]">
+      <section className="bg-destructive text-white min-h-[700px] h-screen max-h-[900px] rounded-bl-[150px]">
         <div className="flex container px-4 sm:px-6 lg:px-8 pb-20 h-[100%]">
           <div className="items-center w-[100%]">
             <div className="flex relative justify-between z-40 w-[100%] top-[335px]">
@@ -69,7 +69,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ data }) => {
                 </a>
               </div>
             </div>
-          </div>{' '}
+          </div>
+
           <div className="absolute z-30 top-0 ml-16">
             {data.hero.heroImage.url.endsWith('.svg') ? (
               <img
