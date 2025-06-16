@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import React from 'react'
 import Image from 'next/image'
 
@@ -8,8 +7,6 @@ interface Props {
   priority?: 'auto' | 'high' | 'low'
 }
 
-import MangoohLogo from '@/images/mangooh-logo-white.svg'
-
 export const Logo = (props: Props) => {
   const { loading: loadingFromProps, priority: priorityFromProps } = props
 
@@ -17,21 +14,11 @@ export const Logo = (props: Props) => {
   const priority = priorityFromProps || 'low'
 
   return (
-    // <img
-    //   alt="Mangooh Logo"
-    //   width={193}
-    //   height={34}
-    //   loading={loading}
-    //   fetchPriority={priority}
-    //   decoding="async"
-    //   className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-    //   src={MangoohLogo}
-    // />
     <Image
       alt="Mangooh Logo"
-      src={MangoohLogo}
-      // width={193}
-      // height={34}
+      src="/images/mangooh-logo-white.svg"
+      width={325}
+      height={50}
       loading={loading}
       fetchPriority={priority}
       decoding="async"

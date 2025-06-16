@@ -1,5 +1,6 @@
 // src/collections/LandingPage.ts
 import type { CollectionConfig } from 'payload'
+import { FormBlock } from '../blocks/Form/config'
 
 export const LandingPage: CollectionConfig = {
   slug: 'landing-page',
@@ -19,10 +20,16 @@ export const LandingPage: CollectionConfig = {
       type: 'group',
       fields: [
         {
-          name: 'title',
+          name: 'titleText1',
           type: 'text',
           required: true,
-          defaultValue: 'Transforme insights em métricas reais',
+          defaultValue: 'Transforme insights',
+        },
+        {
+          name: 'titleText2',
+          type: 'text',
+          required: true,
+          defaultValue: 'em métricas reais',
         },
         {
           name: 'subtitle',
@@ -47,9 +54,9 @@ export const LandingPage: CollectionConfig = {
         },
       ],
     },
-    // Features Section
+    // Benefícios Section
     {
-      name: 'features',
+      name: 'benefits',
       type: 'group',
       fields: [
         {
@@ -63,7 +70,13 @@ export const LandingPage: CollectionConfig = {
           defaultValue: 'Gerir metas deixou de ser tão complexo como imaginávamos na energia.',
         },
         {
-          name: 'featuresList',
+          name: 'benefitImage',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+        {
+          name: 'benefitsList',
           type: 'array',
           fields: [
             {
@@ -82,24 +95,19 @@ export const LandingPage: CollectionConfig = {
           ],
           defaultValue: [
             {
-              title: 'Produtividade aumenta',
-              description: 'Aumento significativo na produtividade da equipe',
-              icon: '📈',
+              title: 'Medição contínua do tráfego e do comportamento do público',
             },
             {
-              title: 'Comunicação eficiente',
-              description: 'Melhora na comunicação interna',
-              icon: '💬',
+              title: 'Captura precisa de impressões visíveis e tráfego qualificado',
             },
             {
-              title: 'Colaboração aumenta',
-              description: 'Maior colaboração entre departamentos',
-              icon: '🤝',
+              title: 'Integração perfeita com plataformas analíticas e simuladores OOH',
             },
             {
-              title: 'Foco nos resultados',
-              description: 'Foco direcionado para resultados mensuráveis',
-              icon: '🎯',
+              title: 'Totalmente compatível com LGPD, com anonimização nativa de dados',
+            },
+            {
+              title: 'Sensores inteligentes com baixo consumo de energia e manutenção mínima',
             },
           ],
         },
@@ -137,5 +145,28 @@ export const LandingPage: CollectionConfig = {
         },
       ],
     },
+    // Form Section
+    // {
+    //   name: 'contactForm',
+    //   type: 'group',
+    //   fields: [
+    //     {
+    //       name: 'title',
+    //       type: 'text',
+    //       defaultValue: 'Entre em contato',
+    //     },
+    //     {
+    //       name: 'subtitle',
+    //       type: 'textarea',
+    //       defaultValue: 'Preencha o formulário e entraremos em contato em breve.',
+    //     },
+    //     {
+    //       name: 'form',
+    //       type: 'blocks',
+    //       blocks: [FormBlock],
+    //       maxRows: 1,
+    //     },
+    //   ],
+    // },
   ],
 }

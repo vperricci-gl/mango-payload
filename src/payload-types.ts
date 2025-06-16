@@ -737,16 +737,18 @@ export interface LandingPage {
   id: number;
   title: string;
   hero: {
-    title: string;
+    titleText1: string;
+    titleText2: string;
     subtitle?: string | null;
     ctaText?: string | null;
     ctaLink?: string | null;
     heroImage: number | Media;
   };
-  features?: {
+  benefits: {
     title?: string | null;
     subtitle?: string | null;
-    featuresList?:
+    benefitImage: number | Media;
+    benefitsList?:
       | {
           title: string;
           description?: string | null;
@@ -1328,18 +1330,20 @@ export interface LandingPageSelect<T extends boolean = true> {
   hero?:
     | T
     | {
-        title?: T;
+        titleText1?: T;
+        titleText2?: T;
         subtitle?: T;
         ctaText?: T;
         ctaLink?: T;
         heroImage?: T;
       };
-  features?:
+  benefits?:
     | T
     | {
         title?: T;
         subtitle?: T;
-        featuresList?:
+        benefitImage?: T;
+        benefitsList?:
           | T
           | {
               title?: T;

@@ -6,7 +6,6 @@ async function getLandingPageData(): Promise<LandingPageProps> {
   try {
     const payload = await getPayload({ config: configPromise })
 
-    // Verificar se a coleção existe e buscar dados
     const result = await payload.find({
       collection: 'landing-page',
       limit: 1,
@@ -24,7 +23,7 @@ async function getLandingPageData(): Promise<LandingPageProps> {
       data: {
         hero: doc.hero,
         bottomSection: doc.bottomSection,
-        features: doc.features,
+        benefits: doc.benefits,
       },
     }
   } catch (error) {
@@ -33,7 +32,8 @@ async function getLandingPageData(): Promise<LandingPageProps> {
     return {
       data: {
         hero: {
-          title: 'Transforme insights em métricas reais errored',
+          titleText1: 'Transforme insights',
+          titleText2: 'em métricas reais',
           subtitle: 'Sua estratégia de OKR e acompanhamento de resultados em tempo real.',
           ctaText: 'Comece sua transformação',
           ctaLink: '#',
@@ -42,10 +42,14 @@ async function getLandingPageData(): Promise<LandingPageProps> {
             alt: 'Hero Image',
           },
         },
-        features: {
+        benefits: {
           title: 'O coração do OKR bate dentro do Mangooh',
           subtitle: 'Gerir metas deixou de ser tão complexo como imaginávamos na energia.',
-          featuresList: [],
+          benefitImage: {
+            url: '/placeholder-benefits.jpg',
+            alt: 'Benefits Image',
+          },
+          benefitsList: [],
         },
         bottomSection: {
           title: 'Uma tecnologia projetada para o mundo real',
